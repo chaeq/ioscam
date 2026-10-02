@@ -27,7 +27,7 @@ The repository includes `.github/workflows/build-ios-viewer.yml` at the reposito
 4. Import that IPA through your working sideload/signing setup (for example SideStore). It is unsigned; it cannot be installed directly. No signing certificate or Apple account secret is required by the build workflow.
 5. Open **PC Frame Viewer**, enter the PC's IPv4 address and port 5055, tap Connect, and grant Local Network access when prompted.
 
-This workflow is provided but **not executed/validated here**. GitHub account runner availability applies. Share the build log if compilation fails; do not proceed as if an IPA were produced. [GitHub's manual workflow instructions](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow) describe the Run workflow control.
+The workflow **compiled successfully** in [run 37062661852](https://github.com/chaeq/ioscam/actions/runs/37062661852). The user confirmed the sideloaded app opens and displays the selected image over the USB tethering IP network. Wi-Fi transport remains unverified. GitHub account runner availability applies. [GitHub's manual workflow instructions](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow) describe the Run workflow control.
 
 Expected on the phone: selected image, advancing frame number, dimensions and received FPS. The label explicitly identifies this as a transport test. On disconnect it retains the last image and shows retry status. Keep the viewer foregrounded during testing.
 
@@ -45,7 +45,7 @@ Select your signing team and a unique bundle ID in the app target, choose the co
 
 ## Evidence and next gate
 
-Windows loopback integration tests and UI construction smoke test passed on 2026-10-02. The iOS source has not been compiled; no iPhone or LiveContainer test has run. Report the result in [TESTING.md](docs/TESTING.md) before implementing core buffers or hooks.
+Windows loopback integration tests and UI construction smoke test passed on 2026-10-02. The macOS CI build passed and the user confirmed the selected image appears on the iPhone over USB tethering IP networking. Sender output is approximately 30 FPS at 1080x1920; displayed FPS/latency and LiveContainer remain unverified. See [TESTING.md](docs/TESTING.md) for the exact evidence.
 
 - [Architecture and proposed interception point](docs/ARCHITECTURE.md)
 - [iOS 27 / build 24A437 notes](docs/IOS27_NOTES.md)

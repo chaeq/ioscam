@@ -51,6 +51,7 @@ final class PCFrameReceiver {
     func stop() {
         queue.async {
             self.running = false
+            VCInvalidateStream()
             self.generation += 1
             self.watchdog?.cancel()
             self.watchdog = nil
@@ -61,6 +62,7 @@ final class PCFrameReceiver {
     }
 
     private func begin() {
+        VCInvalidateStream()
         generation += 1
         let token = generation
         watchdog?.cancel()
@@ -97,6 +99,7 @@ final class PCFrameReceiver {
 
     private func fail(_ token: Int, _ reason: String) {
         guard generation == token else { return }
+        VCInvalidateStream()
         print("[iOS] \(reason)")
         generation += 1
         let retryToken = generation
@@ -165,6 +168,7 @@ final class PCFrameReceiver {
                         return
                     }
                     self.lastNumber = number
+                    VCSubmitImage(cgImage)
                     self.lastTimestamp = timestamp
                     self.lastReceive = Date()
                     self.received += 1

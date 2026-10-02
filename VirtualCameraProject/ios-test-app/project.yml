@@ -13,6 +13,9 @@ targets:
     platform: iOS
     sources:
       - path: ViewerApp.swift
+      - path: CameraModel.swift
+      - path: ../virtual-camera-core
+      - path: ../camera-hook
       - path: ../ios-receiver
     info:
       path: Info.plist
@@ -20,15 +23,17 @@ targets:
         CFBundleDisplayName: PC Frame Viewer
         UILaunchScreen: {}
         NSLocalNetworkUsageDescription: Receive test image frames from your Windows PC over your local network.
+        NSCameraUsageDescription: Test physical camera callbacks and PC frame substitution in this app.
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
-          - UIInterfaceOrientationLandscapeLeft
-          - UIInterfaceOrientationLandscapeRight
     settings:
       base:
         CODE_SIGN_STYLE: Automatic
-        MARKETING_VERSION: '0.1.0'
-        CURRENT_PROJECT_VERSION: '1'
+        SWIFT_OBJC_BRIDGING_HEADER: Bridge.h
+        HEADER_SEARCH_PATHS: '$(SRCROOT)/../virtual-camera-core'
+        CLANG_ENABLE_OBJC_ARC: YES
+        MARKETING_VERSION: '0.2.0'
+        CURRENT_PROJECT_VERSION: '2'
 schemes:
   PCFrameViewer:
     build:

@@ -10,7 +10,7 @@ Windows / Python 3.13 / Pillow 10.4.0:
 - IPA downloaded and its ZIP structure and Info.plist validated. Loaded into Sideloadly and installation initiated for the connected iOS 27 phone. User subsequently confirmed the app opens on the phone.
 - Physical-device image display: **user confirmed the selected car-interior image appears**. TCP connection observed from phone `172.20.10.1` to PC `172.20.10.4:5055`; sender reports approximately 30 FPS at 1080x1920. This used the Apple Mobile Device Ethernet USB tethering network. Wi-Fi was disconnected; its deprecated `172.20.10.7` address caused the initial timeout.
 - Received/displayed FPS, end-to-end latency, prolonged stability, reconnect behavior and Wi-Fi transport: **not yet measured/verified on device**. Sender FPS is not display FPS.
-- Camera substitution / hook / LiveContainer: **not implemented or tested**. Basic transport/display gate passed; the remaining acceptance checks above must not be inferred from this result.
+- Stage 2 linked hook and provider: **compiled and user-verified on device**. [Run 37064673591](https://github.com/chaeq/ioscam/actions/runs/37064673591) passed after excluding duplicate README resources. Sideloadly reported Done/100% for v0.2 installation. User confirmed live Real camera output, PC image in Hook test and increasing replaced count. Both physical and frozen fallback checks were confirmed by the user; LiveContainer is not implemented or tested. See STAGE2_TEST.md.
 
 Repeat automated tests:
 

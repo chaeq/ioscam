@@ -1,6 +1,6 @@
 # Experimental PC -> iPhone camera project
 
-Stage 1: a Windows still-image sender and standalone iOS TCP/JPEG viewer. **No camera substitution is implemented or proven.** Video/webcam input and REAL CAMERA mode are deferred until this minimal transport test succeeds on the phone.
+Stage 1 transport and stage 2 camera substitution are user-verified on the phone. REAL CAMERA and Hook test share a renderer; the linked Objective-C proxy supplies PC frames with an increasing replacement counter. Physical/frozen fallback is implemented; both physical and frozen fallback checks were confirmed by the user. Video/webcam sources and LiveContainer packaging remain deferred. See [stage 2 test instructions](docs/STAGE2_TEST.md).
 
 ## Run the Windows sender
 

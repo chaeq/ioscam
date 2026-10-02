@@ -1,5 +1,7 @@
 # Stage 2: prove callback substitution
 
+2026-10-02 result: user confirmed Real camera shows live surroundings, Hook test shows the selected PC car image, and the replaced counter increases. Controlled in-process delegate substitution is therefore demonstrated on the user's iOS 27 phone. User also confirmed physical fallback with Freeze OFF and frozen-image fallback with Freeze ON, with callbacks continuing. This does not establish compatibility with LiveContainer or third-party apps.
+
 Build 2 (v0.2) keeps the same bundle ID so Sideloadly updates the installed viewer.
 
 1. Open app, connect to the PC (current USB tethering address 172.20.10.4, port 5055).

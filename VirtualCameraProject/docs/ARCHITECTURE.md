@@ -1,6 +1,6 @@
 # Architecture and feasibility — 2026-10-02
 
-Status: transport prototype source implemented; no iPhone result yet. This is not a system-wide iOS virtual camera. Feasibility means there is a plausible process-local experiment, not demonstrated compatibility.
+Status update: transport display and the stage 2 linked setter hook succeeded on the phone according to the user's test: live physical output, substituted PC image and increasing replacement counter. The controlled provider uses portrait BGRA. The design below records the original proposal; see STAGE2_TEST.md for current scope and verified fallback checks. This is not a system-wide iOS virtual camera.
 
 ## Evidence
 

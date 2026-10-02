@@ -1,0 +1,28 @@
+name: Build unsigned iOS viewer
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install project generator
+        run: brew install xcodegen
+      - name: Generate and compile device app
+        working-directory: VirtualCameraProject/ios-test-app
+        run: |
+          xcodebuild -version
+          xcodegen generate
+          xcodebuild -project PCFrameViewer.xcodeproj -scheme PCFrameViewer -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' -derivedDataPath build CODE_SIGNING_ALLOWED=NO build
+      - name: Package unsigned IPA
+        run: |
+          mkdir -p staging/Payload
+          cp -R VirtualCameraProject/ios-test-app/build/Build/Products/Release-iphoneos/PCFrameViewer.app staging/Payload/
+          cd staging
+          zip -qr ../PCFrameViewer-unsigned.ipa Payload
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PCFrameViewer-unsigned
+          path: PCFrameViewer-unsigned.ipa

@@ -1,0 +1,12 @@
+.venv/
+local-media/
+local-runtime/
+__pycache__/
+*.pyc
+.DS_Store
+DerivedData/
+*.xcodeproj/
+*.xcuserstate
+test-results/
+VirtualCameraProject/ios-test-app/build/
+VirtualCameraProject/ios-test-app/Info.plist

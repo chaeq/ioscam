@@ -1,0 +1,36 @@
+name: PCFrameViewer
+options:
+  deploymentTarget:
+    iOS: '16.0'
+settings:
+  base:
+    SWIFT_VERSION: '5.0'
+    TARGETED_DEVICE_FAMILY: '1,2'
+    PRODUCT_BUNDLE_IDENTIFIER: org.example.PCFrameViewer
+targets:
+  PCFrameViewer:
+    type: application
+    platform: iOS
+    sources:
+      - path: ViewerApp.swift
+      - path: ../ios-receiver
+    info:
+      path: Info.plist
+      properties:
+        CFBundleDisplayName: PC Frame Viewer
+        UILaunchScreen: {}
+        NSLocalNetworkUsageDescription: Receive test image frames from your Windows PC over your local network.
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+    settings:
+      base:
+        CODE_SIGN_STYLE: Automatic
+        MARKETING_VERSION: '0.1.0'
+        CURRENT_PROJECT_VERSION: '1'
+schemes:
+  PCFrameViewer:
+    build:
+      targets:
+        PCFrameViewer: all

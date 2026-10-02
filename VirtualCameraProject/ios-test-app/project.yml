@@ -15,7 +15,9 @@ targets:
       - path: ViewerApp.swift
       - path: CameraModel.swift
       - path: ../virtual-camera-core
+        excludes: ['*.md']
       - path: ../camera-hook
+        excludes: ['*.md']
       - path: ../ios-receiver
     info:
       path: Info.plist
@@ -39,3 +41,4 @@ schemes:
     build:
       targets:
         PCFrameViewer: all
+
